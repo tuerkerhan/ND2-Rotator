@@ -1,0 +1,38 @@
+[workspace]
+authors = ["Türker Han <than@tuerkerhan.com>", "Daniel Woschée"]
+channels = ["conda-forge"]
+name = "onedcelltrack-pixi"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+# For test purpose
+start = "python onedcelltrack/core/pipeline.py"
+
+
+[dependencies]
+python = "3.11.*"
+
+[pypi-dependencies]
+# Core numerical and data processing packages
+numpy         = "==1.24.3"
+pandas        = "==2.2.3"
+tifffile      = "==2025.3.30"
+nd2reader     = "==3.3.1"
+scikit-video  = "==1.1.11"
+trackpy       = "==0.6.4"
+tqdm          = "==4.67.1"
+scikit-image  = "==0.25.2"
+
+# Additional dependencies used in the project:
+torch         = "==2.6.0"         # (Used in the original project; verify if needed)
+cellpose      = "==3.1.1.1"         # For segmentation functions
+matplotlib    = "==3.10.1"         # For plotting in GUI, webapp, and notebooks
+PyQt5         = "==5.15.11"        # For the desktop GUI in onedcelltrack/gui/app.py
+Flask         = "==3.1.0"         # For the web application in onedcelltrack/webapp/app.py
+Pillow        = "==11.1.0"         # For image processing in the webapp (PIL.Image)
+julia         = "==0.6.2"         # For simulations integration in simulations_app.py
+opencv-python = "==4.11.0.86"      # For cv2 usage in various parts of the code
+numba         = "==0.61.0"        # For performance optimizations in functions (if used)
+scipy         = "==1.15.2"         # For signal processing and other scientific functions
+ipywidgets    = "==8.1.5"         # For interactive notebook viewers (if needed)
